@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: consumer-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+server:
+  port: 2113
+feign:
+  hystrix:
+    enabled: false
+logging:
+  level:
+    com.laoyin.service.api.HelloApi: debug
