@@ -3,6 +3,7 @@ package com.laoyin.consumer.controller;
 import com.laoyin.service.api.HelloApi;
 import com.laoyin.service.api.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -17,6 +18,8 @@ public class HelloController {
     @Autowired
     private HelloApi helloApi;
 
+    @Value("${from}")
+    private String from;
 
     @GetMapping("hello1")
     String hello1(@RequestParam("name") String name) {
@@ -33,4 +36,10 @@ public class HelloController {
     User hello3(@RequestBody User user) {
         return helloApi.hello3(user);
     }
+
+    @GetMapping("hello4")
+    String hello4() {
+        return "hello: " + from;
+    }
+
 }

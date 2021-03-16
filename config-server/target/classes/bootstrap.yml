@@ -8,6 +8,6 @@ spring:
           uri: https://github.com/laoyin007/myspringcloud.git
           search-paths: config
           username: laoyin007
-          password: xxxx
+          password: Hgago2008
 server:
   port: 2115
